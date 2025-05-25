@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peek-A-Pupil</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  </head>
+  <body>
+    <video id="input-video" autoplay playsinline muted></video>
+    <canvas id="overlay-canvas" class="video-canvas"></canvas>
+    <div class="gesture-toggle">
+      <button id="toggle-gesture">☰</button>
+      <div class="gesture-guide" id="gestureBox">
+        <h3>Hand Gestures Guide</h3>
+        <ul>
+          <li><strong>Show your hand</strong> – The eye awakens</li>
+          <li><strong>Move your palm</strong> – The pupil follows you</li>
+          <li><strong>Hide your hand</strong> – The eye closes</li>
+          <li><strong>Point your finger</strong> – The pupil turns red</li>
+          <li><strong>Make a fist</strong> – The eye blinks shut</li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="title">
+      Peek-A-Pupil
+      <button class="music-btn" onclick="toggleVideo()" id="music-icon">
+        🔇
+      </button>
+    </h1>
+
+    <div id="music-frame" class="music-frame hidden">
+      <iframe
+        id="ytplayer"
+        width="0"
+        height="0"
+        src="https://www.youtube.com/embed/SbAKYgfYET8?enablejsapi=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="eye-wrapper">
+      <img src="assets/background.png" class="eye-background" />
+      <div class="eye">
+        <img src="assets/eye.png" class="eye-bg" />
+        <img src="assets/pupil.png" class="pupil" />
+      </div>
+    </div>
+
+    <footer class="social-footer">
+      <h2>Connect with me</h2>
+      <div class="social-icons">
+        <a
+          href="https://www.linkedin.com/in/apoorvdarshan"
+          class="social-click"
+          target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="https://x.com/apoorvdarshan"
+          class="social-click"
+          target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a
+          href="https://github.com/apoorvdarshan/peek-a-pupil"
+          class="social-click"
+          target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/404apoorv"
+          class="social-click"
+          target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/@apoorvdarshan"
+          class="social-click"
+          target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="mailto:ad13dtu@gmail.com" class="social-click"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
+      <p class="credit">Made by Apoorv Darshan</p>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
