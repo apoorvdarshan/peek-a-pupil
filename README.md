@@ -36,9 +36,7 @@ Peek-A-Pupil is a **horror-themed, interactive web app** where a monstrous eye t
 
 ## 📸 Preview
 
-<div align="center">
-  <img src="assets/preview.gif" alt="Peek-A-Pupil Preview" width="300" />
-</div>
+https://github.com/user-attachments/assets/362996dc-bfef-4da6-a0b9-5cb139f1660c
 
 ---
 
