@@ -1,0 +1,366 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Creepster", cursive;
+  font-size: 64px;
+  color: #ff0000;
+  text-shadow: 0 0 10px red, 0 0 20px black;
+  letter-spacing: 3px;
+  z-index: 999;
+  animation: flicker 1s infinite alternate;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+    text-shadow: 0 0 10px red, 0 0 20px black;
+  }
+  to {
+    opacity: 0.85;
+    text-shadow: 0 0 5px red, 0 0 10px black;
+  }
+}
+
+.music-btn {
+  margin-left: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #ff0000;
+  cursor: pointer;
+  text-shadow: 0 0 10px red;
+  transition: transform 0.2s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 15px #ff0000, 0 0 5px black;
+}
+
+.music-frame {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+}
+
+.hidden {
+  display: none;
+}
+
+.eye-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.eye-background {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform: scale(1.9);
+  transform-origin: center;
+  top: 4px;
+  left: 2px;
+  z-index: 0;
+}
+
+.eye {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.eye-bg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.pupil {
+  width: 95px;
+  height: 95px;
+  position: absolute;
+  top: 52.5px;
+  left: 52.5px;
+  transition: transform 0.05s;
+}
+
+.social-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  z-index: 999;
+}
+
+.social-footer h2 {
+  font-size: 24px;
+  margin: 0 0 8px 0;
+  color: #ff0000;
+  font-family: "Creepster", cursive;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.social-click i {
+  font-size: 24px;
+  color: #ff0000;
+  text-shadow: 0 0 8px red;
+  transition: transform 0.2s ease;
+}
+
+.social-click i:hover {
+  transform: scale(1.3);
+  color: #fff;
+}
+
+.credit {
+  font-size: 14px;
+  color: #ccc;
+}
+
+#input-video {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 260px; /* Increased from 180px */
+  height: auto;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  z-index: 999;
+  box-shadow: 0 0 10px red;
+  transform: scaleX(-1);
+}
+
+.gesture-toggle {
+  position: fixed;
+  top: 260px; /* ⬅️ Move below the video */
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#toggle-gesture {
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid red;
+  color: white;
+  font-size: 22px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 6px red;
+  font-family: "Creepster", cursive;
+  transition: all 0.3s ease;
+}
+
+#toggle-gesture:hover {
+  background: rgba(255, 0, 0, 0.2); /* softer red tint */
+  color: #ff4444;
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #ff4444;
+}
+
+#toggle-gesture:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 0 4px #880000;
+}
+
+.gesture-guide {
+  margin-top: 10px;
+  width: 260px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 16px;
+  font-family: "Creepster", cursive;
+  font-weight: 400; /* add this */
+  line-height: 1.5; /* add this */
+  letter-spacing: 0.5px; /* add this */
+  border-radius: 10px;
+  box-shadow: 0 0 12px red;
+  text-align: left;
+
+  /* Animation Setup */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease-in-out;
+}
+
+.gesture-guide.show {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gesture-guide h3 {
+  font-size: 20px;
+  color: #ff3333;
+  text-shadow: 0 0 6px red;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.gesture-guide ul {
+  padding-left: 18px;
+  margin: 8px 0 0 0;
+  list-style: none;
+}
+
+.gesture-guide li {
+  margin-bottom: 6px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+#overlay-canvas {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 260px;
+  height: auto;
+  border-radius: 10px;
+  z-index: 1005;
+  pointer-events: none;
+  transform: scaleX(-1); /* mirror like video */
+}
+
+/* === Responsive Adjustments for ≤ 1000px === */
+@media (max-width: 1000px) {
+  /* Resize camera and overlay canvas */
+  #input-video,
+  #overlay-canvas {
+    width: 200px;
+    top: 10px;
+    right: 10px;
+  }
+
+  /* Gesture guide reposition and shrink */
+  .gesture-toggle {
+    top: 220px;
+    right: 10px;
+  }
+
+  .gesture-guide {
+    width: 200px;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .gesture-guide h3 {
+    font-size: 16px;
+  }
+
+  .gesture-guide li {
+    font-size: 13px;
+  }
+
+  /* Social footer adjustments */
+  .social-footer h2 {
+    font-size: 20px;
+  }
+
+  .credit {
+    font-size: 13px;
+  }
+
+  /* Eye and background image */
+  .eye-bg,
+  .eye-background,
+  .pupil {
+    max-width: 80vw;
+    max-height: 80vw;
+  }
+
+  /* Hide decorative extras if needed */
+  #ytplayer {
+    display: none;
+  }
+}
+
+/* === Responsive Adjustments for ≤ 880px === */
+@media (max-width: 880px) {
+  /* Hide webcam and overlay canvas */
+  #input-video,
+  #overlay-canvas {
+    display: none;
+  }
+
+  /* Move hamburger icon back to top-right */
+  .gesture-toggle {
+    top: 110px; /* 🔁 Previously 50px */
+    right: 20px;
+  }
+
+  /* Adjust gesture guide positioning */
+  .gesture-guide {
+    width: 200px;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .gesture-guide h3 {
+    font-size: 16px;
+  }
+
+  .gesture-guide li {
+    font-size: 13px;
+  }
+
+  /* Optional: Resize or hide less important elements */
+  .social-footer h2 {
+    font-size: 18px;
+  }
+
+  .credit {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 42px;
+    text-align: center;
+    white-space: nowrap; /* 🔒 Prevent line breaks */
+    overflow: hidden; /* Optional: clean cutoff if too wide */
+    text-overflow: ellipsis; /* Optional: add "..." if overflowed */
+  }
+}
+
+/* === Remove blue tap highlight on mobile === */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
