@@ -4,11 +4,11 @@ Peek-A-Pupil is a **horror-themed, interactive web app** where a monstrous eye t
 
 ## 🔗 Live Preview
 
-🎯 [https://peek-a-pupil.aopv.dev](https://peek-a-pupil.aopv.dev)
+🎯 [https://peek-a-pupil.apoorvdarshan.com](https://peek-a-pupil.apoorvdarshan.com)
 
 ## 💻 GitHub Code
 
-📂 [https://github.com/aopv/peek-a-pupil](https://github.com/aopv/peek-a-pupil)
+📂 [https://github.com/apoorvdarshan/peek-a-pupil](https://github.com/apoorvdarshan/peek-a-pupil)
 
 ---
 
@@ -51,4 +51,4 @@ Let’s connect and build creepy-cool interactive web apps!
 
 This site was created as a frontend-only experiment in **gesture control**, **real-time interaction**, and **creative UI/UX design**.
 
-Made by [Apoorv Darshan](https://github.com/aopv)
+Made by [Apoorv Darshan](https://github.com/apoorvdarshan)
